@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切换盒子示例</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /*justify-content: center;*/
+            height: 100vh;
+            margin-top: 0;
+            margin-left: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        #box1 {
+            display: block;
+            background-image: url("IMG_5072.JPG"); /* 绿色 */
+            background-size:90%;
+        }
+
+        #box2 {
+            /*background-color: #2196F3; !* 蓝色 *!*/
+        }
+
+        .hidden {
+            display: none;
+        }
+        p{
+            display: block;
+            width: 500px;
+            position: absolute;
+            line-height: 20px;
+            top: 250px;
+            left: 100px;
+            color: #779ecb;
+        }
+        .video{
+            width:500px;
+            height:300px;
+            margin-top: 200px;
+        }
+
+
+        #toggleButton{
+            display: block;
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            border: none;
+            background-color: pink;
+            color: white;
+            font-size: 16px;
+            top: 330px;
+        }
+
+    </style>
+</head>
+<body>
+<div  class="box">
+    <div id="box1" class="box">盒子 1</div>
+    <div id="box2" class="box hidden">
+        <video class="video" controls>
+            <source src="zf.MP4">
+        </video>
+    </div>
+    <p id="lofo">是否接收来自lsy的生日祝福？</p>
+    <button id="toggleButton" onclick="xx()">是</button>
+</div>
+
+
+<script>
+    function xx(){
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var p=document.getElementById('lofo');
+        var s = document.getElementById('toggleButton');
+
+            box2.style.display="block";
+            box1.style.display="none";
+            p.style.display="none";
+            s.style.display="none";
+
+
+    }
+
+    // document.getElementById('toggleButton').addEventListener('click', function() {
+    //     const box1 = document.getElementById('box1');
+    //     const box2 = document.getElementById('box2');
+    //     const p=document.getElementsByClassName('p');
+    //     const s = document.getElementById('toggleButton');
+    //
+    //     // box1.classList.add('hidden');
+    //     // p.classList.add('hidden');
+    //     // // s.classList.add('hidden');
+    //     if (box1.classList.contains('hidden')) {
+    //         box1.classList.remove('hidden');
+    //         box2.classList.add('hidden');
+    //     } else {
+    //         box1.classList.add('hidden');
+    //         box2.classList.remove('hidden');
+    //     }
+
+    // });
+
+</script>
+</body>
+</html>
